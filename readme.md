@@ -8,18 +8,21 @@ your VVV using `vagrant provision`.
 
 # What will happen?
 
-Check out the `vvv-*` scripts for what will happen.
+Also, check out the `vvv-*` scripts for what will happen.
 ______________
 
 This will create a `/vagrant-install/www/wordpress-themereview/htdocs`
-folder with a fresh WordPress install. 
+folder with a fresh WordPress install.
 
 The data base `wordpress_themereview` will be automatically created for you. 
-It will also check out the developer and theme-check plugins and activate them for you
-as well as install the Theme Unit Test data.
+It will also check out the [developer](http://wordpress.org/plugins/developer/) 
+and [theme-check](http://wordpress.org/plugins/theme-check/) plugins and activate them for you
+as well as install the [Theme Unit Test](http://codex.wordpress.org/Theme_Unit_Test) data.
 
-You can then go to `http://themereview.wordpress.dev`, upload and install
-a theme and review away. Just delete the `htdocs` folder when you want to start over.
+You can then go to [http://themereview.wordpress.dev](http://themereview.wordpress.dev), 
+upload and install a theme and review away. 
+
+Just delete the `htdocs` folder when you want to start over.
 
 ## WordPress Login Creds
 
