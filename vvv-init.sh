@@ -13,7 +13,11 @@ then
 	cd htdocs
 
 	# Configure and setup WordPress.
-	wp core config --allow-root --dbname="wordpress_themereview" --dbuser=wp --dbpass=wp --dbhost="localhost"
+	wp core config --allow-root --dbname="wordpress_themereview" --dbuser=wp --dbpass=wp --dbhost="localhost" --extra-php <<PHP
+define( 'WP_DEBUG', true );
+define( 'WP_DEBUG_LOG', true );
+PHP
+
 	wp core install --allow-root --url=themereview.wordpress.dev --title="A WordPress Theme Reviewers VVV" --admin_user=admin --admin_password=password --admin_email=changme@changme.com
 
 	# Checkout the developer plugin.
