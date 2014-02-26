@@ -3,8 +3,8 @@ for testing WordPress Themes.
 
 # How to install this VarryingVagrantVagrant
 
-Clone this repo into your `www/` folder and re-provision 
-your VVV using `vagrant provision`.
+Clone this repo, or [download it](https://github.com/aubreypwd/wordpress-themereview-vvv/releases), 
+into your `www/` folder and re-provision your VVV using `vagrant provision`
 
 # What will happen?
 
@@ -26,4 +26,4 @@ Just delete the `htdocs` folder when you want to start over.
 
 ## WordPress Login Creds
 
-You can login with `admin`, which has the password `password`.
+You can login with `admin`, which has the password `password`
