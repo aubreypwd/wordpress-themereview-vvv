@@ -36,7 +36,6 @@ PHP
 	wp plugin install --allow-root wordpress-importer --activate
 
 	# Import the unit data.
-
 	curl -O https://wpcom-themes.svn.automattic.com/demo/theme-unit-test-data.xml
 	wp import theme-unit-test-data.xml --authors=create
 	rm theme-unit-test-data.xml
