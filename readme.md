@@ -58,7 +58,7 @@ _________________________
 
 # Changelog
 
-## 2.0
+## 1.1
 
 - Merged in smartness from [grappler/theme-review/](https://github.com/grappler/theme-review/)
 - Now you can add `.zip` files in the root and they will install at provisioning time
