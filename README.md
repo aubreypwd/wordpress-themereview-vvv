@@ -1,6 +1,6 @@
 # VVV Theme Development and Review
 
-This is an [auto-sitesetup](https://github.com/Varying-Vagrant-Vagrants/VVV/wiki/Auto-site-Setup) designed to be used with [Varying Vagrants Vagrant](https://github.com/Varying-Vagrant-Vagrants/VVV) for reviewing WordPress.org themes.
+This is an [auto-sitesetup](https://github.com/Varying-Vagrant-Vagrants/VVV/wiki/Auto-site-Setup) designed to be used with [Varying Vagrants Vagrant](https://github.com/Varying-Vagrant-Vagrants/VVV) for developing and reviewing themes.
 
 ## To get started:
 
@@ -8,7 +8,7 @@ This is an [auto-sitesetup](https://github.com/Varying-Vagrant-Vagrants/VVV/wiki
 2. If your Vagrant is running, from the Vagrant directory run `vagrant halt`
 3. Followed by `vagrant up --provision`.  Perhaps a cup of tea or coffee now? The provisioning may take a while.
 
-Then you can visit [http://themereview.wordpress.dev](http://themereview.wordpress.dev) to start developing or reviewing themes.
+Then you can visit [http://theme-review.dev](http://theme-review.dev) to start developing or reviewing themes.
 
 ## Dependencies
 - [Varying Vagrants Vagrant](https://github.com/Varying-Vagrant-Vagrants/VVV) - [Installation guide](https://github.com/Varying-Vagrant-Vagrants/VVV#the-first-vagrant-up)
@@ -36,7 +36,7 @@ Then you can visit [http://themereview.wordpress.dev](http://themereview.wordpre
 ### Theme Review
 * Username: `admin`
 * Password: `password`
-* Login: [login](http://themereview.wordpress.dev/wp-login-php)
+* Login: [login](http://theme-review.dev/wp-login-php)
 * LOCAL PATH: vagrant-local/www/theme-review
 * VM PATH: /srv/www/theme-review
 * URL: `http://theme-trunk.dev`
