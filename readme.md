@@ -4,15 +4,17 @@ This is an [auto-sitesetup](https://github.com/Varying-Vagrant-Vagrants/VVV/wiki
 
 ## To get started:
 
-1. Clone this branch of this repo into the `www` directory of your Vagrant as `www/theme-review`
-2. If your Vagrant is running, from the Vagrant directory run `vagrant halt`
-3. Followed by `vagrant up --provision`.  Perhaps a cup of tea or coffee now? The provisioning may take a while
+1. Clone this repo to your VVV/`www` folder
+2. Update to a [release tag](https://github.com/aubreypwd/wordpress-themereview-vvv/releases) to keep stable
+3. If your Vagrant is running, from the Vagrant directory run `vagrant halt` followed by `vagrant up --provision`.
+
+Perhaps a cup of tea or coffee now? The provisioning may take a while.
 
 Then you can visit [http://themereview.wordpress.dev](http://themereview.wordpress.dev) to start developing or reviewing themes.
 
 ## To start over (review another theme):
 
-You can use (I know it's long, Textexpander?) `vagrant ssh -c 'cd /home/vagrant/www/wordpress-themereview-vvv/ && rm -Rf htdocs/ && sh vvv-init.sh'` to do it and not reset your Vagrant. Or, you can always `vagrant reload --provision` and get a cup of coffee.
+You can do it the soft way using (I know it's long, Text Expander?) `vagrant ssh -c 'cd /home/vagrant/www/wordpress-themereview-vvv/ && rm -Rf htdocs/ && sh vvv-init.sh'`. Or, you can do it the hard way `vagrant reload --provision` and get a cup of coffee.
 
 ## Dependencies
 
