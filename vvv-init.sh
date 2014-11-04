@@ -31,13 +31,13 @@ PHP
 	# Install into DB
 	wp core install --url=themereview.wordpress.dev --title="A WordPress Theme Reviewers VVV" --admin_user=admin --admin_password=password --admin_email=changme@changeme.com
 
-# **
-# Your themes
-# **
-for i in `ls ../*.zip`
-do
-	wp theme install $i
-done
+	# **
+	# Your themes
+	# **
+	for i in `ls ../*.zip`
+	do
+		wp theme install $i
+	done
 
 	# **
 	# # Plugins
@@ -88,22 +88,3 @@ else
 	cd ..
 
 fi
-
-
-# # Install Airplane Mode.
-# if ! $(wp plugin is-installed airplane-mode); then
-# 	# Rename folder name.
-# 	cd wp-content/plugins
-# 	mv airplane-mode-master airplane-mode
-# 	wp plugin activate airplane-mode
-# 	cd -
-# fi
-#
-# # Install GitHub Updater.
-# if ! $(wp plugin is-installed github-updater); then
-# 	# Rename folder name.
-# 	cd wp-content/plugins
-# 	mv github-updater-master github-updater
-# 	wp plugin activate github-updater
-# 	cd -
-# fi
