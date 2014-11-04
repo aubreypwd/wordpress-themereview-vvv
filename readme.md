@@ -24,16 +24,7 @@ You can do it the soft way using (I know it's long, Text Expander?) `vagrant ssh
 ## What will happen?
 
 - Install WordPress and import "Theme Unit Test Data"
-- Install & activate "Developer"
-- Install & activate "Theme Check"
-- Install & activate "Theme Mentor"
-- Install & activate "Theme Checklist"
-- Install & activate "What The File"
-- Install & activate "VIP Scanner"
-- Install & activate "WordPress Database Reset"
-- Install & activate "Toolbar Theme Switcher"
-- Install "RTL Tester"
-- Install "Pig Latin"
+- Install a bunch of developer plugins you'll need
 - Install any `.zip` themes located in the root
 
 ## Credentials and Such
@@ -72,3 +63,9 @@ _________________________
 ## 1.0
 
 - The old VVV theme review
+
+_________________________
+
+# Contributors
+
+@aubreypwd @RCowles @grappler
