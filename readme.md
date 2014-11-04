@@ -12,7 +12,7 @@ Then you can visit [http://themereview.wordpress.dev](http://themereview.wordpre
 
 ## To start over (review another theme):
 
-You can use (I know it's long, Textexpander?) `vagrant ssh -c 'cd /home/vagrant/www/wordpress-themereview-vvv/ && rm-Rf htdocs/ && sh vvv-init.sh'` to do it and not reset your Vagrant. Or, you can always `vagrant reload --provision` and get a cup of coffee.
+You can use (I know it's long, Textexpander?) `vagrant ssh -c 'cd /home/vagrant/www/wordpress-themereview-vvv/ && rm -Rf htdocs/ && sh vvv-init.sh'` to do it and not reset your Vagrant. Or, you can always `vagrant reload --provision` and get a cup of coffee.
 
 ## Dependencies
 
@@ -48,7 +48,7 @@ You can use (I know it's long, Textexpander?) `vagrant ssh -c 'cd /home/vagrant/
 * Pass: `root`
 * See: [Connecting to MySQL](https://github.com/varying-vagrant-vagrants/vvv/wiki/Connecting-to-MySQL) from your local machine
 
-## Themes
+# Reviewing Themes
 
 If you drop a theme's `.zip` file into the root folder (not htdocs) provisioning will automatically install the theme ready for activation.
 
