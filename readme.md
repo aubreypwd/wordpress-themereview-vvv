@@ -1,4 +1,4 @@
-# VVV Theme Development and Review
+# A WordPress Theme Reviewers VVV
 
 This is an [auto-sitesetup](https://github.com/Varying-Vagrant-Vagrants/VVV/wiki/Auto-site-Setup) designed to be used with [Varying Vagrants Vagrant](https://github.com/Varying-Vagrant-Vagrants/VVV) for reviewing WordPress.org themes.
 
@@ -6,7 +6,7 @@ This is an [auto-sitesetup](https://github.com/Varying-Vagrant-Vagrants/VVV/wiki
 
 1. Clone this branch of this repo into the `www` directory of your Vagrant as `www/theme-review`
 2. If your Vagrant is running, from the Vagrant directory run `vagrant halt`
-3. Followed by `vagrant up --provision`.  Perhaps a cup of tea or coffee now? The provisioning may take a while.
+3. Followed by `vagrant up --provision`.  Perhaps a cup of tea or coffee now? The provisioning may take a while
 
 Then you can visit [http://themereview.wordpress.dev](http://themereview.wordpress.dev) to start developing or reviewing themes.
 
@@ -16,39 +16,31 @@ Then you can visit [http://themereview.wordpress.dev](http://themereview.wordpre
 
 ## What will happen?
 - Install WordPress and import "Theme Unit Test Data"
-- Uninstall "Hello Dolly"
 - Install & activate "Developer"
 - Install & activate "Theme Check"
 - Install & activate "Theme Mentor"
 - Install & activate "Theme Checklist"
 - Install & activate "What The File"
 - Install & activate "VIP Scanner"
-- Install & activate "Query Monitor"
 - Install & activate "WordPress Database Reset"
 - Install & activate "Toolbar Theme Switcher"
-- Install & activate "RTL Tester"
-- Install & activate "Pig Latin"
-- Install & activate "Airplane Mode"
-- Install & activate "GitHub Updater"
+- Install "RTL Tester"
+- Install "Pig Latin"
 
 ## Credentials and Such
 
 ### Theme Review
 * Username: `admin`
 * Password: `password`
-* Login: [login](http://themereview.wordpress.dev/wp-login-php)
-* LOCAL PATH: vagrant-local/www/theme-review
-* VM PATH: /srv/www/theme-review
-* URL: `http://theme-trunk.dev`
-* DB Name: `theme_review`
+* Login: [login](http://themereview.wordpress.dev/wp-admin)
 
 ### MySQL Root
 * User: `root`
 * Pass: `root`
 * See: [Connecting to MySQL](https://github.com/varying-vagrant-vagrants/vvv/wiki/Connecting-to-MySQL) from your local machine
 
----
+## Themes
 
-Based off [wordpress-themereview-vvv](https://github.com/aubreypwd/wordpress-themereview-vvv)
+If you drop a theme's `.zip` file into the root folder (not htdocs) provisioning will automatically install the theme ready for activation.
 
-License MIT
+Yes, drop six zip files and all six themes will install automagically.
