@@ -58,10 +58,14 @@ _________________________
 
 # Changelog
 
-## 1.1
+## 1.2
 
 - Merged in smartness from [grappler/theme-review/](https://github.com/grappler/theme-review/)
 - Now you can add `.zip` files in the root and they will install at provisioning time
+
+## 1.1
+
+- Theme Unit Data is dynamic thanks to @RCowles
 
 ## 1.0
 
