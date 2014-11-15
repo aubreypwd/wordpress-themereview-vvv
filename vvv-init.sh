@@ -96,6 +96,14 @@ else
 		# Update Plugins
 		wp plugin update --all
 
+		# **
+		# Your themes
+		# **
+		for i in `ls ../*.zip`
+		do
+			wp theme install $i
+		done
+
 	fi
 
 	cd ..

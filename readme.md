@@ -51,6 +51,10 @@ _________________________
 
 # Changelog
 
+## 1.2.1
+
+- Now you can use the quick way to reset everything and it will still import your theme `.zip`s
+
 ## 1.2
 
 - Merged in smartness from [grappler/theme-review/](https://github.com/grappler/theme-review/)
