@@ -24,18 +24,18 @@ then
 
 	# Download WordPress
 	printf "Downloading WordPress in htdocs...\n"
-	wp core download
+	wp core download --allow-root
 
 	# Install WordPress.
 	printf "Creating wp-config in htdocs...\n"
-	wp core config --dbname="wordpress_themereview" --dbuser=wp --dbpass=wp --dbhost="localhost" --extra-php <<PHP
+	wp core config --dbname="wordpress_themereview" --dbuser=wp --dbpass=wp --dbhost="localhost" --allow-root --extra-php <<PHP
 define( 'WP_DEBUG', true );
 define( 'SCRIPT_DEBUG', true );
 define( 'WP_DEBUG_LOG', true );
 PHP
 
 	# Install into DB
-	wp core install --url=themereview.wordpress.dev --title="A WordPress Theme Reviewers VVV" --admin_user=admin --admin_password=password --admin_email=changme@changeme.com
+	wp core install --url=themereview.wordpress.dev --title="A WordPress Theme Reviewers VVV" --admin_user=admin --admin_password=password --admin_email=changme@changeme.com --allow-root
 
 	# **
 	# Your themes
@@ -43,7 +43,7 @@ PHP
 	printf 'Installing themes...\n'
 	for i in `ls ../*.zip`
 	do
-		wp theme install $i
+		wp theme install $i --allow-root
 	done
 
 	# **
@@ -51,30 +51,30 @@ PHP
 	# **
 
 	printf 'Installing plugins...\n'
-	wp plugin install wordpress-importer --activate
-	wp plugin install developer --activate
-	wp plugin install theme-check --activate
-	wp plugin install theme-mentor --activate
-	wp plugin install theme-checklist --activate
-	wp plugin install what-the-file --activate
-	wp plugin install vip-scanner --activate
-	wp plugin install wordpress-database-reset --activate
-	wp plugin install toolbar-theme-switcher --activate
-	wp plugin install rtl-tester
-	wp plugin install piglatin
-	wp plugin install debug-bar  --activate
-	wp plugin install debug-bar-console  --activate
-	wp plugin install debug-bar-cron  --activate
-	wp plugin install debug-bar-extender  --activate
-	wp plugin install rewrite-rules-inspector  --activate
-	wp plugin install log-deprecated-notices  --activate
-	wp plugin install log-viewer  --activate
-	wp plugin install monster-widget  --activate
-	wp plugin install user-switching  --activate
-	wp plugin install regenerate-thumbnails  --activate
-	wp plugin install simply-show-ids  --activate
-	wp plugin install theme-test-drive  --activate
-	wp plugin install wordpress-beta-tester  --activate
+	wp plugin install wordpress-importer --activate --allow-root
+	wp plugin install developer --activate --allow-root
+	wp plugin install theme-check --activate --allow-root
+	wp plugin install theme-mentor --activate --allow-root
+	wp plugin install theme-checklist --activate --allow-root
+	wp plugin install what-the-file --activate --allow-root
+	wp plugin install vip-scanner --activate --allow-root
+	wp plugin install wordpress-database-reset --activate --allow-root
+	wp plugin install toolbar-theme-switcher --activate --allow-root
+	wp plugin install rtl-tester --allow-root
+	wp plugin install piglatin --allow-root
+	wp plugin install debug-bar  --activate --allow-root
+	wp plugin install debug-bar-console  --activate --allow-root
+	wp plugin install debug-bar-cron  --activate --allow-root
+	wp plugin install debug-bar-extender  --activate --allow-root
+	wp plugin install rewrite-rules-inspector  --activate --allow-root
+	wp plugin install log-deprecated-notices  --activate --allow-root
+	wp plugin install log-viewer  --activate --allow-root
+	wp plugin install monster-widget  --activate --allow-root
+	wp plugin install user-switching  --activate --allow-root
+	wp plugin install regenerate-thumbnails  --activate --allow-root
+	wp plugin install simply-show-ids  --activate --allow-root
+	wp plugin install theme-test-drive  --activate --allow-root
+	wp plugin install wordpress-beta-tester  --activate --allow-root
 
 	# **
 	# Unit Data
@@ -83,12 +83,12 @@ PHP
 	# Import the unit data.
 	printf 'Installing unit test data...\n'
 	curl -O https://wpcom-themes.svn.automattic.com/demo/theme-unit-test-data.xml
-	wp import theme-unit-test-data.xml --authors=create
+	wp import theme-unit-test-data.xml --authors=create --allow-root
 	rm theme-unit-test-data.xml
 
 	# Replace url from unit data
 	printf 'Adjusting urls in database...\n'
-	wp search-replace 'wpthemetestdata.wordpress.com' 'themereview.wordpress.dev' --skip-columns=guid
+	wp search-replace 'wpthemetestdata.wordpress.com' 'themereview.wordpress.dev' --skip-columns=guid --allow-root
 
 	cd ..
 
@@ -97,16 +97,16 @@ else
 	cd htdocs/
 
 	# Updates
-	if $(wp core is-installed); then
+	if $(wp core is-installed --allow-root); then
 
 		# Update WordPress.
 		printf "Updating WordPress for Theme Review...\n"
-		wp core update
-		wp core update-db
+		wp core update --allow-root
+		wp core update-db --allow-root
 
 		# Update Plugins
 		printf "Updating plugins for Theme Review...\n"
-		wp plugin update --all
+		wp plugin update --all --allow-root
 
 		# **
 		# Your themes
@@ -114,7 +114,7 @@ else
 		printf "Installing themes for Theme Review...\n"
 		for i in `ls ../*.zip`
 		do
-			wp theme install $i
+			wp theme install $i --allow-root
 		done
 
 	fi
