@@ -14,9 +14,9 @@ then
 
 	# Create the database over again.
 	printf "(Re-)Creating database 'wordpress_themereview'...\n"
-	mysql -u root --password=root -e "DROP DATABASE IF EXISTS wordpress_themereview"
-	mysql -u root --password=root -e "CREATE DATABASE IF NOT EXISTS wordpress_themereview"
-	mysql -u root --password=root -e "GRANT ALL PRIVILEGES ON wordpress_themereview.* TO wp@localhost IDENTIFIED BY 'wp';"
+	mysql -u root --password=root -e "DROP DATABASE IF EXISTS \`wordpress_themereview\`"
+	mysql -u root --password=root -e "CREATE DATABASE IF NOT EXISTS \`wordpress_themereview\`"
+	mysql -u root --password=root -e "GRANT ALL PRIVILEGES ON \`wordpress_themereview\`.* TO wp@localhost IDENTIFIED BY 'wp';"
 
 	# **
 	# WordPress
