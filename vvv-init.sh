@@ -1,7 +1,10 @@
+printf "\nCommencing Setup Theme Review\n"
+
 # If we delete htdocs, let's just start over.
 if [ ! -d htdocs ]
 then
 
+	printf "Creating directory htdocs for Theme review...\n"
 	mkdir htdocs
 	cd htdocs
 
@@ -10,6 +13,7 @@ then
 	# **
 
 	# Create the database over again.
+	printf "(Re-)Creating database 'wordpress_themereview'...\n"
 	mysql -u root --password=root -e "DROP DATABASE IF EXISTS wordpress_themereview"
 	mysql -u root --password=root -e "CREATE DATABASE IF NOT EXISTS wordpress_themereview"
 	mysql -u root --password=root -e "GRANT ALL PRIVILEGES ON wordpress_themereview.* TO wp@localhost IDENTIFIED BY 'wp';"
@@ -19,9 +23,11 @@ then
 	# **
 
 	# Download WordPress
+	printf "Downloading WordPress in htdocs...\n"
 	wp core download
 
 	# Install WordPress.
+	printf "Creating wp-config in htdocs...\n"
 	wp core config --dbname="wordpress_themereview" --dbuser=wp --dbpass=wp --dbhost="localhost" --extra-php <<PHP
 define( 'WP_DEBUG', true );
 define( 'SCRIPT_DEBUG', true );
@@ -34,6 +40,7 @@ PHP
 	# **
 	# Your themes
 	# **
+	printf 'Installing themes...\n'
 	for i in `ls ../*.zip`
 	do
 		wp theme install $i
@@ -43,6 +50,7 @@ PHP
 	# # Plugins
 	# **
 
+	printf 'Installing plugins...\n'
 	wp plugin install wordpress-importer --activate
 	wp plugin install developer --activate
 	wp plugin install theme-check --activate
@@ -73,11 +81,13 @@ PHP
 	# **
 
 	# Import the unit data.
+	printf 'Installing unit test data...\n'
 	curl -O https://wpcom-themes.svn.automattic.com/demo/theme-unit-test-data.xml
 	wp import theme-unit-test-data.xml --authors=create
 	rm theme-unit-test-data.xml
 
 	# Replace url from unit data
+	printf 'Adjusting urls in database...\n'
 	wp search-replace 'wpthemetestdata.wordpress.com' 'themereview.wordpress.dev' --skip-columns=guid
 
 	cd ..
@@ -90,15 +100,18 @@ else
 	if $(wp core is-installed); then
 
 		# Update WordPress.
+		printf "Updating WordPress for Theme Review...\n"
 		wp core update
 		wp core update-db
 
 		# Update Plugins
+		printf "Updating plugins for Theme Review...\n"
 		wp plugin update --all
 
 		# **
 		# Your themes
 		# **
+		printf "Installing themes for Theme Review...\n"
 		for i in `ls ../*.zip`
 		do
 			wp theme install $i
