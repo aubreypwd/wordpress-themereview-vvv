@@ -59,7 +59,6 @@ PHP
 	wp plugin install what-the-file --activate --allow-root
 	wp plugin install vip-scanner --activate --allow-root
 	wp plugin install wordpress-database-reset --activate --allow-root
-	wp plugin install toolbar-theme-switcher --activate --allow-root
 	wp plugin install rtl-tester --allow-root
 	wp plugin install piglatin --allow-root
 	wp plugin install debug-bar  --activate --allow-root
