@@ -107,6 +107,10 @@ else
 		printf "Updating plugins for Theme Review...\n"
 		wp plugin update --all --allow-root
 
+		# Update preloaded Themes
+		printf "Updating preloaded themes for Theme Review...\n"
+		wp theme update --all --allow-root
+
 		# **
 		# Your themes
 		# **
