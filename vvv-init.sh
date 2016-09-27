@@ -51,7 +51,13 @@ PHP
 	# **
 
 	printf 'Installing plugins...\n'
-	wp plugin install wordpress-importer --activate --allow-root
+	wp plugin install wordpress-importer --allow-root
+	# Fix PHP7 compatibility variable variables in the WP Importer plugin.
+	echo "Removing errors from the WP Importer plugin."
+	if [[ -f /srv/www/wordpress-themereview-vvv/htdocs/wp-content/plugins/wordpress-importer/wordpress-importer.php ]]; then
+		sed -i -e "s/\$\$meta\['key'] = \$meta\['value'];/\${\$meta['key']} = \$meta['value'];/g" "/srv/www/wordpress-themereview-vvv/htdocs/wp-content/plugins/wordpress-importer/wordpress-importer.php"
+	fi
+	wp plugin activate wordpress-importer --allow-root
 	wp plugin install developer --activate --allow-root
 	wp plugin install theme-check --activate --allow-root
 	wp plugin install theme-mentor --activate --allow-root
@@ -66,7 +72,14 @@ PHP
 	wp plugin install debug-bar-cron  --activate --allow-root
 	wp plugin install debug-bar-extender  --activate --allow-root
 	wp plugin install rewrite-rules-inspector  --activate --allow-root
-	wp plugin install log-deprecated-notices  --activate --allow-root
+
+	wp plugin install log-deprecated-notices --allow-root
+	# Fix PHP4 constructor in the Log Deprecated Notices plugin.
+	echo "Removing errors from the Log Deprecated Notices plugin."
+	if [[ -f /srv/www/wordpress-themereview-vvv/htdocs/wp-content/plugins/log-deprecated-notices/log-deprecated-notices.php ]]; then
+		sed -i -e 's/function Deprecated_Log() {/function __construct() {/g' "/srv/www/wordpress-themereview-vvv/htdocs/wp-content/plugins/log-deprecated-notices/log-deprecated-notices.php"
+	fi
+	wp plugin activate log-deprecated-notices --allow-root
 	wp plugin install log-viewer  --activate --allow-root
 	wp plugin install monster-widget  --activate --allow-root
 	wp plugin install user-switching  --activate --allow-root
@@ -120,4 +133,21 @@ else
 
 	cd ..
 
+fi
+
+
+# =============================================================================
+# Removing Errors
+# =============================================================================
+
+# Fix PHP7 compatibility variable variables in the WP Importer plugin.
+echo "Removing errors from the WP Importer plugin."
+if [[ -f /srv/www/wordpress-themereview-vvv/htdocs/wp-content/plugins/wordpress-importer/wordpress-importer.php ]]; then
+	sed -i -e 's/\$\$meta\['key'\] = \$meta\['value'\];/\${\$meta['key']} = \$meta['value'];/g' "/srv/www/wordpress-themereview-vvv/htdocs/wp-content/plugins/wordpress-importer/wordpress-importer.php"
+fi
+
+# Fix PHP4 constructor in the Log Deprecated Notices plugin.
+echo "Removing errors from the Log Deprecated Notices plugin."
+if [[ -f /srv/www/wordpress-themereview-vvv/htdocs/wp-content/plugins/log-deprecated-notices/log-deprecated-notices.php ]]; then
+	sed -i -e 's/function Deprecated_Log() {/function __construct() {/' "/srv/www/wordpress-themereview-vvv/htdocs/wp-content/plugins/log-deprecated-notices/log-deprecated-notices.php"
 fi
