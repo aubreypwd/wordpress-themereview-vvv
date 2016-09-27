@@ -67,6 +67,7 @@ PHP
 	wp plugin install debug-bar-extender  --activate --allow-root
 	wp plugin install rewrite-rules-inspector  --activate --allow-root
 	wp plugin install log-deprecated-notices  --activate --allow-root
+	wp plugin install log-deprecated-notices-extender  --activate --allow-root
 	wp plugin install log-viewer  --activate --allow-root
 	wp plugin install monster-widget  --activate --allow-root
 	wp plugin install user-switching  --activate --allow-root
