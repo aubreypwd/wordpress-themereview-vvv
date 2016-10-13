@@ -12,10 +12,6 @@ Perhaps a cup of tea or coffee now? The provisioning may take a while.
 
 Then you can visit [http://themereview.wordpress.dev](http://themereview.wordpress.dev) to start developing or reviewing themes.
 
-## To start over (review another theme):
-
-You can do it the soft way using (I know it's long, Text Expander?) `vagrant ssh -c 'cd /home/vagrant/www/wordpress-themereview-vvv/ && rm -Rf htdocs/ && sh vvv-init.sh'`. Or, you can do it the hard way `vagrant reload --provision` and get a cup of coffee.
-
 ## Dependencies
 
 - [Varying Vagrants Vagrant](https://github.com/Varying-Vagrant-Vagrants/VVV) - [Installation guide](https://github.com/Varying-Vagrant-Vagrants/VVV#the-first-vagrant-up)
@@ -46,6 +42,10 @@ You can do it the soft way using (I know it's long, Text Expander?) `vagrant ssh
 If you drop a theme's `.zip` file into the root folder (not htdocs) provisioning will automatically install the theme ready for activation.
 
 Yes, drop six zip files and all six themes will install automagically.
+
+## To start over (review another theme):
+
+You can do it the soft way using (I know it's long, Text Expander?) `vagrant ssh -c 'cd /home/vagrant/www/wordpress-themereview-vvv/ && rm -Rf htdocs/ && sh vvv-init.sh'`. Or, you can do it the hard way `vagrant reload --provision` and get a cup of coffee.
 
 _________________________
 
