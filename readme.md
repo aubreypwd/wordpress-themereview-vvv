@@ -51,6 +51,13 @@ _________________________
 
 # Changelog
 
+## 1.2.2
+
+- Theme's update when you provision props @jrfnl
+- New debug plugin: log-deprecated-notices-extender props @jrfnl
+- More information presented about what's happening behind the scenes props @jrfnl
+- Fix to error causing Windows 7 to not provision props @jrfnl
+
 ## 1.2.1
 
 - Now you can use the quick way to reset everything and it will still import your theme `.zip`s
@@ -62,14 +69,8 @@ _________________________
 
 ## 1.1
 
-- Theme Unit Data is dynamic thanks to @RCowles
+- Theme Unit Data is dynamic props @RCowles
 
 ## 1.0
 
 - The old VVV theme review
-
-_________________________
-
-# Contributors
-
-@aubreypwd @RCowles @grappler
