@@ -1,5 +1,12 @@
 printf "\nCommencing Setup Theme Review\n"
 
+# **
+# Allow for this database to be backed up and reused.
+# **
+# Create custom database init script.
+sh ./init-custom-sql.sh
+
+
 # If we delete htdocs, let's just start over.
 if [ ! -d htdocs ]
 then
